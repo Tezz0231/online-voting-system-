@@ -1,0 +1,87 @@
+extends layout
+
+block content
+  style.
+    .circular-img {
+      width: 250px; /* Adjust the size as needed */
+      height: 250px; /* Adjust the size as needed */
+      border-radius: 70%;
+      object-fit: cover; /* Ensures the image covers the circle without distortion */
+    }
+    .bottom-right-img {
+      position: absolute;
+      bottom: 10px; /* Adjust distance from the bottom */
+      right: 10px; /* Adjust distance from the right */
+      width: 100px; /* Adjust size as needed */
+      height: 100px; /* Ensure it’s a perfect circle */
+      border-radius: 50%; /* Makes the image circular */
+      object-fit: cover; /* Ensures the image covers the circle without distortion */
+    }
+    .media-img {
+      width: 100px; /* Adjust the size as needed */
+      height: 100px; /* Adjust the size as needed */
+      border-radius: 50%; /* Makes the image circular */
+      object-fit: cover; /* Ensures the image covers the circle without distortion */
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; /* Space between items */
+    }
+    .text {
+      font-size: 30px; /* Adjust font size as needed */
+      margin-left: 10px; /* Space between the image and text */
+      text-decoration: none; /* Remove underline from links */
+    }
+    .text h3 {
+      margin: 0; /* Remove default margin for heading */
+    }
+    .social-media-links {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+    }
+  
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small
+        &nbsp;#{pageHeader.strapline}
+
+  .row
+    .col-12.col-md-6.col-lg-4
+      .card
+        .card-block.d-flex.justify-content-between.align-items-center
+          h4
+            a.card(href="/location") Bharat Rashtra Samithi
+          img.media-img(src='/images/BRS.jpeg')
+          p.address BANDARI LAKSHMA REDDY
+    .col-12.col-md-6.col-lg-4
+      .card
+        .card-block.d-flex.justify-content-between.align-items-center
+          h4
+            a.card(href="/location") Bharatiya Janata Party
+          img.media-img(src='/images/BJP.jpg')
+          p.address N.V.S.S. PRABHAKAR 
+    .col-12.col-md-6.col-lg-4
+      .card
+        .card-block.d-flex.justify-content-between.align-items-center
+          h4
+            a.card(href="/location") Indian National Congress
+          img.media-img(src='/images/INC.WEBP')
+          p.address PARAMESHWAR REDDY MANDUMULA
+    .col-12.col-md-6.col-lg-4
+      .card
+        .card-block.d-flex.justify-content-between.align-items-center
+          h4
+            a.card(href="/location") Bahujan Samaj Party
+          img.media-img(src='/images/BSP.jpeg')
+          p.address SUNKARA NARESH
+    .col-12.col-md-6.col-lg-4
+      .card
+        .card-block.d-flex.justify-content-between.align-items-center
+          h4
+            a.card(href="/location") Pyramid Party of India
+          img.media-img(src='/images/PPI.jpeg')
+          p.address ALAMURI TIMMAIAH CHAR 
+    .col-12.col-md-6
+      p.lead Unable to go to the poll booth? Perhaps let the Online Voting System help you!
