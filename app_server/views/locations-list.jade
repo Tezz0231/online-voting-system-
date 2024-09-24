@@ -8,15 +8,6 @@ block content
       border-radius: 70%;
       object-fit: cover; /* Ensures the image covers the circle without distortion */
     }
-    .bottom-right-img {
-      position: absolute;
-      bottom: 10px; /* Adjust distance from the bottom */
-      right: 10px; /* Adjust distance from the right */
-      width: 100px; /* Adjust size as needed */
-      height: 100px; /* Ensure it’s a perfect circle */
-      border-radius: 50%; /* Makes the image circular */
-      object-fit: cover; /* Ensures the image covers the circle without distortion */
-    }
     .media-img {
       width: 100px; /* Adjust the size as needed */
       height: 100px; /* Adjust the size as needed */
@@ -40,7 +31,22 @@ block content
       display: flex;
       flex-direction: column; /* Stack items vertically */
     }
-  
+    .vote-box {
+      width: 80px;
+      height: 40px;
+      background-color: #4CAF50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .vote-box a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
   .row.banner
     .col-12
       h1= pageHeader.title
@@ -48,40 +54,45 @@ block content
         &nbsp;#{pageHeader.strapline}
 
   .row
-    .col-12.col-md-6.col-lg-4
+    .col-12
       .card
         .card-block.d-flex.justify-content-between.align-items-center
-          h4
-            a.card(href="/location") Bharat Rashtra Samithi
           img.media-img(src='/images/BRS.jpeg')
+          h4 Bharat Rashtra Samithi
           p.address BANDARI LAKSHMA REDDY
-    .col-12.col-md-6.col-lg-4
+          .vote-box
+            a(href="/location") Vote
+    .col-12
       .card
         .card-block.d-flex.justify-content-between.align-items-center
-          h4
-            a.card(href="/location") Bharatiya Janata Party
           img.media-img(src='/images/BJP.jpg')
-          p.address N.V.S.S. PRABHAKAR 
-    .col-12.col-md-6.col-lg-4
+          h4 Bharatiya Janata Party
+          p.address N.V.S.S. PRABHAKAR
+          .vote-box
+            a(href="/location") Vote
+    .col-12
       .card
         .card-block.d-flex.justify-content-between.align-items-center
-          h4
-            a.card(href="/location") Indian National Congress
           img.media-img(src='/images/INC.jpg')
+          h4 Indian National Congress
           p.address PARAMESHWAR REDDY MANDUMULA
-    .col-12.col-md-6.col-lg-4
+          .vote-box
+            a(href="/location") Vote
+    .col-12
       .card
         .card-block.d-flex.justify-content-between.align-items-center
-          h4
-            a.card(href="/location") Bahujan Samaj Party
           img.media-img(src='/images/BSP.jpeg')
+          h4 Bahujan Samaj Party
           p.address SUNKARA NARESH
-    .col-12.col-md-6.col-lg-4
+          .vote-box
+            a(href="/location") Vote
+    .col-12
       .card
         .card-block.d-flex.justify-content-between.align-items-center
-          h4
-            a.card(href="/location") Pyramid Party of India
           img.media-img(src='/images/PPI.jpeg')
-          p.address ALAMURI TIMMAIAH CHAR 
-    .col-12.col-md-6
+          h4 Pyramid Party of India
+          p.address ALAMURI TIMMAIAH CHAR
+          .vote-box
+            a(href="/location") Vote
+    .col-12
       p.lead Unable to go to the poll booth? Perhaps let the Online Voting System help you!
