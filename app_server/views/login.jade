@@ -1,0 +1,25 @@
+extends layout
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Online Voting System - Login
+    link(rel="stylesheet", href="/stylesheets/style.css")  // Link to your CSS file for styling
+  body
+    div.container
+      h1 Online Voting System Login
+      form(method="POST", action="/login")  // POST request to /login endpoint for authentication
+        div.form-group
+          label(for="voterId") Voter ID
+          input(type="text", id="voterId", name="voterId", placeholder="Enter your Voter ID" required)
+        div.form-group
+          label(for="dob") Date of Birth (Password)
+          input(type="date", id="dob", name="dob", required)
+        div.form-group
+          button(type="submit") Login
+        p Not registered? 
+          a(href="/register") Register here
+      if errorMessage
+        div.error-message #{errorMessage}  // To display errors such as invalid login credentials
