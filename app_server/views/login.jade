@@ -1,25 +1,43 @@
 extends layout
 
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Online Voting System - Login
-    link(rel="stylesheet", href="/stylesheets/style.css")  // Link to your CSS file for styling
-  body
-    div.container
-      h1 Online Voting System Login
-      form(method="POST", action="/login")  // POST request to /login endpoint for authentication
-        div.form-group
-          label(for="voterId") Voter ID
-          input(type="text", id="voterId", name="voterId", placeholder="Enter your Voter ID" required)
-        div.form-group
-          label(for="dob") Date of Birth (Password)
-          input(type="date", id="dob", name="dob", required)
-        div.form-group
-          button(type="submit") Login
-        p Not registered? 
-          a(href="/register") Register here
-      if errorMessage
-        div.error-message #{errorMessage}  // To display errors such as invalid login credentials
+block content
+  .d-flex.justify-content-center.align-items-center.vh-100
+    .text-center
+      h1.display-3 Login
+      form#loginForm(method="POST", class="mt-4")
+        .form-group
+          label(for="username") VoterID:
+          input#username.form-control(type="text", name="username", placeholder="Enter your VoterID", required)
+        .form-group.mt-3
+          label(for="password") Password (Date of Birth - YYYY-MM-DD):
+          input#password.form-control(type="text", name="password", placeholder="Enter your date of birth", required)
+        button.btn.btn-primary.mt-4(type="submit") Login
+
+      // JavaScript to handle form submission and validation
+      script.
+        document.getElementById('loginForm').onsubmit = function(event) {
+          event.preventDefault(); // Prevent actual form submission
+
+          // Get form values
+          const voterId = document.getElementById('username').value;
+          const dob = document.getElementById('password').value;
+
+          // Regular expressions to validate VoterID and DOB
+          const voterIdPattern = /^[A-Z]{3}[0-9]{7}$/; // Indian VoterID format: 3 letters followed by 7 digits
+          const dobPattern = /^\d{4}-\d{2}-\d{2}$/; // Date of birth format: YYYY-MM-DD
+
+          // Validate VoterID
+          if (!voterIdPattern.test(voterId)) {
+            alert('Invalid VoterID. It should be 3 letters followed by 7 digits (e.g., ABC1234567).');
+            return; // Stop submission
+          }
+
+          // Validate Date of Birth
+          if (!dobPattern.test(dob)) {
+            alert('Invalid Date of Birth format. Please use YYYY-MM-DD.');
+            return; // Stop submission
+          }
+
+          // If both validations pass, redirect to the homepage
+          window.location.href = '/';
+        };

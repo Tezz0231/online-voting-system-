@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .d-flex.justify-content-center.align-items-center.vh-100
+    .text-center
+      h1.display-3 Election Results
+      h3.mt-4 Here are the results of the election:
+
+      // Create a table for the election results
+      table.table.table-bordered.table-hover.mt-5
+        thead
+          tr
+            th Party Name
+            th No. of Votes
+        tbody
+          tr
+            td Bharat Rashtra Samithi
+            td 12450
+          tr
+            td Bharatiya Janata Party
+            td 9870
+          tr
+            td Indian National Congress
+            td 13200
+          tr
+            td Bahujan Samaj Party
+            td 7450
+          tr
+            td Pyramid Party of India
+            td 5400
