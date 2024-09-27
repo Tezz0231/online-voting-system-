@@ -4,26 +4,7 @@ const homelist = (req, res) => {
     title: 'Online Voting System.',
     pageHeader: {
     title: 'General Elections',
-    },
-    locations: [{
-    name: 'BRS',
-    address: 'Kalvakuntla Chandrashekar Rao',
-    rating: 5,
-    facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-    distance: '100m'
-    },{
-    name: 'Cafe Hero',
-    address: '125 High Street, Reading, RG6 1PS',
-    rating: 4,
-    facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-    distance: '200m'
-    },{
-    name: 'Burger Queen',
-    address: '1256 High Street, Reading, RG6 1PS',
-    rating: 2,
-    facilities: ['Food', 'Premium wifi'],
-    distance: '250m'
-}]
+    }
 });
 };
     /* GET 'Location info' page */
